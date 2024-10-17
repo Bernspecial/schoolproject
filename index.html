@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index | Weather App</title>
+    <link rel="stylesheet" href="styles/weather.css">
+    <script src="scripts/weather.js" type="module"></script>
+
 </head>
 
 <body>
@@ -28,6 +31,7 @@
                 </div>
             </section>
 
+            <!-- I dont think i will able to make use of the forecast because my api key is not fetching the one call api from openWeather. -->
             <section class="hourly-forecast">
                 <h2>Hourly Forecast</h2>
                 <div id="hourly-info">
@@ -43,9 +47,10 @@
         </main>
 
         <footer>
-            <p>&copy; 2023 Weather App. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Weather App. All rights reserved.</p>
         </footer>
     </div>
+
 </body>
 
 </html>
