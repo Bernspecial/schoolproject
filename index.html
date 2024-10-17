@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index | Weather App</title>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Weather App</h1>
+        </header>
+
+        <main>
+            <section class="search">
+                <input type="text" id="city-input" placeholder="Enter city name" />
+                <button id="search-button">Get Weather</button>
+            </section>
+
+            <section class="current-weather">
+                <h2>Current Weather</h2>
+                <div id="weather-info">
+                    <img id="weather-icon" src="" alt="Weather Icon" />
+                    <p id="temperature">-- °C</p>
+                    <p id="description">--</p>
+                </div>
+            </section>
+
+            <section class="hourly-forecast">
+                <h2>Hourly Forecast</h2>
+                <div id="hourly-info">
+                    <!-- Hourly forecast data will be populated here -->
+                </div>
+            </section>
+
+            <section class="sunrise-sunset">
+                <h2>Sunrise & Sunset</h2>
+                <p id="sunrise-time">Sunrise: --</p>
+                <p id="sunset-time">Sunset: --</p>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2023 Weather App. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
