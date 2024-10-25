@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index | Weather App</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="styles/weather.css">
     <script src="scripts/weather.js" type="module"></script>
 
@@ -24,30 +26,22 @@
 
             <section class="current-weather">
                 <h2>Current Weather</h2>
-                <div id="weather-info">
-                    <img id="weather-icon" src="" alt="Weather Icon" />
-                    <p id="temperature">-- °C</p>
-                    <p id="description">--</p>
-                </div>
+                <div id="weather-info"></div>
             </section>
-
-            <!-- I dont think i will able to make use of the forecast because my api key is not fetching the one call api from openWeather. -->
-            <section class="hourly-forecast">
-                <h2>Hourly Forecast</h2>
-                <div id="hourly-info">
-                    <!-- Hourly forecast data will be populated here -->
-                </div>
-            </section>
-
+            <div id="map" style="height: 400px;"></div>
             <section class="sunrise-sunset">
                 <h2>Sunrise & Sunset</h2>
-                <p id="sunrise-time">Sunrise: --</p>
-                <p id="sunset-time">Sunset: --</p>
+                <div id="sunForecast"></div>
             </section>
+            <section class="theForecast"> 
+                <h2>Forecast</h2>
+                <div id="forecast"></div>
+            </section>
+            
         </main>
 
         <footer>
-            <p>&copy; <span id="year"></span> Weather App. All rights reserved.</p>
+            <p>&copy; <span id="year"></span> Weather App | All rights reserved | Bernard Olayemi Michael | WDD330 Project.</p>
         </footer>
     </div>
 
