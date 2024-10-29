@@ -15,26 +15,29 @@ export function setYear(selector) {
 const apiKey = "8e3486763e6a9e8115cfa37e1b0b7f59";
 
 // Get the city input field and search button
-const cityInput = document.getElementById('city-input');
-const searchButton = document.getElementById('search-button');
+// const cityInput = document.getElementById('city-input');
+// const searchButton = document.getElementById('search-button');
 
 // Get the weather info container
 const weatherInfo = document.getElementById('weather-info');
 
 // Add an event listener to the search button
-searchButton.addEventListener("click", getWeather);
+// searchButton.addEventListener("click", getWeather);
 
 
 // Initialize the map variable
 let map;
 
 // Function to get the weather data
-export function getWeather() {
+export function getWeather(city) {
     // Get the city name from the input field
-    const city = cityInput.value.trim();
+    // const city = cityInput.value.trim();
 
     // Check if the city name is not empty
-    if (city !== "") {
+    if (city) {
+
+        // Save the city to local storage
+        // localStorage.setItem('lastSearchedCity', city);
         // Construct the API URL
         const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -52,7 +55,7 @@ export function getWeather() {
 
                 updateSunriseSunset(data);
 
-                const weatherHtml = `
+                const weatherHtml = ` 
                         <h2>${city}</h2>
                         <table>
                             <tr>
@@ -83,7 +86,7 @@ export function getWeather() {
                     `;
 
                 // Update the weather info container
-                weatherInfo.innerHTML = weatherHtml;
+                weatherInfo.innerHTML = `Current Weather: ${weatherHtml}`;
 
                 // Add the map
                 const latitude = data.coord.lat;
@@ -111,6 +114,13 @@ export function getWeather() {
         alert('Please enter a city name.');
     }
 }
+// window.onload = function () {
+//     const lastSearchedCity = localStorage.getItem('lastSearchedCity');
+//     if (lastSearchedCity) {
+//         cityInput.value = lastSearchedCity; // Populate the input field
+//         getWeather(); // Optionally fetch the weather for the last searched city
+//     }
+// }
 
 
 // Get the sunrise and sunset elements
@@ -137,5 +147,5 @@ export function updateSunriseSunset(weatherData) {
         </tr>
     </table>
 `;
-    sunforecast.innerHTML = sunfore;
+    sunforecast.innerHTML = `Sunset & Sunrise: ${sunfore}`;
 }

@@ -10,14 +10,21 @@ p {
 
 /* Basic styling for the body */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #ffffff;
+    font-family: 'Roboto', sans-serif; /* Use Roboto for body text */
+    background-color: #c8e5f2;
     color: #333;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full viewport height */
 }
 
 /* Container styling */
 .container {
+    flex: 1; /* Allow the container to grow and fill the available space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
@@ -29,12 +36,18 @@ header {
     margin-bottom: 20px;
 }
 
+h1 {
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for headers */
+    font-weight: 600; /* Semi-bold */
+}
+
 /* Main section styling */
 main {
     background-color: #f0f8ff;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    width: 100%; /* Make sure main takes full width */
 }
 
 /* Search section styling */
@@ -49,6 +62,7 @@ main {
     width: 70%;
     border: 1px solid #4f86c6;
     border-radius: 4px;
+    font-family: 'Roboto', sans-serif; /* Ensure input uses Roboto */
 }
 
 #search-button {
@@ -65,24 +79,36 @@ main {
     background-color: #2c7b73;
 }
 
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px; /* Add space between the main body and footer */
+}
+
 /* Weather info section styling */
 .current-weather,
 .hourly-forecast,
 .sunrise-sunset {
     margin-bottom: 20px;
-    overflow-x: auto;
-    /* Allow horizontal scrolling if needed */
+    overflow-x: auto; /* Allow horizontal scrolling if needed */
 }
 
 /* Table Styling */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
-    /* Add some space above the table */
+    margin-top: 20px; /* Add some space above the table */
 }
 
 th,
 td {
-    border: 1px solid
+    border: 1px solid #4f86c6; /* Ensure border color matches the input */
+    padding: 8px; /* Add padding for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+th {
+    background-color: #e0f7fa; /* Light background for table headers */
+    font-family: 'Montserrat', sans-serif; /* Use Montserrat for table headers */
 }

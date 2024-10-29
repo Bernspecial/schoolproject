@@ -4,27 +4,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App | Home</title>
+    <title>Weather App | Display</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@600&display=swap"
-        rel="stylesheet">
-    <!-- <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script> -->
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <link rel="stylesheet" href="styles/weather.css">
-    <script src="scripts/home.js" type="module"></script>
+    <script src="scripts/weatherDisplay.js" type="module"></script>
 
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <h1>Weather App</h1>
-        </header>
-
         <main>
-            <section class="search">
-                <input type="text" id="city-input" placeholder="Enter city name" />
-                <button id="search-button">Get Weather</button>
+            <section class="current-weather">
+                <div id="weather-info"></div>
             </section>
+            <div id="map" style="height: 400px;"></div>
+            <section class="sunrise-sunset">
+                <div id="sunForecast"></div>
+            </section>
+            <section class="theForecast">
+                <div id="forecast"></div>
+            </section>
+
         </main>
 
         <footer>
